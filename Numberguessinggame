@@ -1,0 +1,52 @@
+import java.util.*;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Numberguessinggame {
+	public static void main(String[]args){
+		 Scanner sc = new Scanner(System.in);
+		 int randomnumber = (int)(Math.random()*100)+1;
+		 int usernumber = 0;
+		 int attempts = 0;
+		 
+		 System.out.println("Welcome to the Number Guesser Game!");
+		 System.out.println("I will choose a number and you have to guess it!");	
+		 System.out.println("Are you ready to play game ");
+		 String ans = sc.next();
+		 
+		 if(ans.equalsIgnoreCase("yes")) {
+			 System.out.println("Start");
+			 
+		 do{
+	     System.out.println("Enter any number");
+		 usernumber = sc.nextInt();
+		 attempts++;
+		 if(usernumber==randomnumber){
+			 System.out.println("Yeahh!! Correct number");
+			 System.out.println("here is a number "+randomnumber);
+			 System.out.println("You have guessed the number "+randomnumber + " in " +attempts + " attempts.");
+			 
+		 }
+		 
+		 else if (usernumber==0){
+		 System.out.println("Stop!!");
+		 }
+		 
+		 else if (usernumber>randomnumber){
+		 System.out.println("no is too long!! try again");
+		 }
+		 
+		 else if (usernumber<randomnumber) {
+		 System.out.println("no is too short !! try again");
+		 }
+		 else {
+			 System.out.println("invalid number");
+		 }
+		 }while(usernumber!=0);
+		 
+		 }else {
+			 System.out.println("See you again");
+		 
+		 }
+		 }		 
+}
